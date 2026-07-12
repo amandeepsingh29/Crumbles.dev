@@ -1,0 +1,26 @@
+---
+title: "The Architecture of Crumbles AI Labs"
+date: "June 22, 2026"
+excerpt: "A deep dive into how we built our interactive 3D WebGL infrastructure using Next.js and React Three Fiber."
+---
+
+# The Architecture of Crumbles AI Labs
+
+Building a website for an AI lab requires a delicate balance. It needs to feel highly technical and experimental, but it also needs to perform well and communicate a clear brand identity.
+
+Here is how we built the Crumbles AI Labs platform.
+
+## The Tech Stack
+
+- **Next.js (App Router)**: For server-side rendering, routing, and overall architecture.
+- **React Three Fiber (R3F)**: To bring the chaotic, particle-based "crumble" identity to life in WebGL.
+- **Zustand**: For lightweight, cross-context state management between HTML and WebGL.
+- **Tailwind CSS v4**: For rapid, highly-customized styling using our unique crayon-inspired color palette.
+
+## The 3D Canvas
+
+The core of our brand identity is the `<CrumbleCanvas />`. Instead of putting it on a single page, we elevated it to the global `layout.tsx`.
+
+This means as you navigate between pages—using Framer Motion for smooth transitions—the 3D particles continue to orbit in the background, uninterrupted. It creates a seamless, immersive experience.
+
+We use **InstancedMesh** for the particles. Instead of rendering 2,000 individual meshes (which would tank performance), we render a single geometry and material, heavily optimized for both desktop and mobile.

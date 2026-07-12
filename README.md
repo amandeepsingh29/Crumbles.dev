@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crumbles
 
-## Getting Started
+Crumbles is an independent AI lab website built with Next.js. It presents the lab’s products, research notes, team, and open roles through a lightweight editorial interface.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- Three.js / React Three Fiber for the sun and moon theme transition
+- Local MDX content for lab notes
+- Framer Motion for small interface transitions
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev       # start the development server
+npm run lint      # run ESLint
+npm run build     # create a production build
+npm run start     # serve the production build
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/app/             Routes, metadata, sitemap, robots, and OG image
+src/components/      Navbar, theme provider, and theme transition canvas
+src/data/             Products, team, careers, and blog data
+content/blogs/       MDX lab notes
+public/              Optimized images and favicon
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set `NEXT_PUBLIC_SITE_URL` when deploying to a different domain. It defaults to `https://crumbles.ai` and is used for canonical URLs, the sitemap, robots metadata, and Open Graph metadata.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Blog posts are `.mdx` files in `content/blogs/` with `title`, `date`, and `excerpt` frontmatter. Products, team members, and careers are currently maintained as typed local data files in `src/data/`.
