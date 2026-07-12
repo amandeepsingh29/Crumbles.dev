@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiActivity, FiArrowRight, FiArrowUpRight, FiGithub, FiMail, FiTwitter } from 'react-icons/fi';
-
-const GITHUB_URL = 'https://github.com';
+import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
   { number: '01', title: 'Autonomous Agent Framework', type: 'Open source', description: 'Composable primitives for deterministic agentic workflows.', color: 'text-sky-500' },
@@ -108,7 +106,7 @@ export default function Home() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">No black boxes</p>
             <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-[-0.06em] text-gray-950 dark:text-white md:text-7xl">Build it. Break it. Show your work.</h2>
             <p className="mt-8 text-xl leading-relaxed text-gray-700 dark:text-gray-300">The best tools get better when more people can inspect them, challenge them, and make them their own.</p>
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950"><FiGithub /> Visit GitHub <FiArrowUpRight /></a>
+            {/* Social/project link disabled until a real public repository is available. */}
           </div>
         </div>
       </section>
@@ -119,11 +117,7 @@ export default function Home() {
             <div>
               <h2 className="font-dynapuff text-3xl font-black">Crumbles</h2>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">An independent lab for building and breaking AI systems.</p>
-              <div className="mt-6 flex gap-3">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="rounded-full border border-white/15 p-3 hover:bg-white/10"><FiTwitter /></a>
-                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-full border border-white/15 p-3 hover:bg-white/10"><FiGithub /></a>
-                <a href="mailto:hello@crumbles.ai" aria-label="Email" className="rounded-full border border-white/15 p-3 hover:bg-white/10"><FiMail /></a>
-              </div>
+              {/* Social/contact buttons disabled until real destinations are available. */}
             </div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link></div></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Signal</p><div className="mt-5 flex items-center gap-2 text-sm text-gray-300"><FiActivity className="text-emerald-300" /> Systems curious</div><p className="mt-3 text-sm leading-relaxed text-gray-500">New experiments when they are ready.</p></div>
