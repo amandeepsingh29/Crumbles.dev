@@ -63,7 +63,7 @@ export default function Home() {
                 ['02', 'Break', 'Push the system past its happy path on purpose.'],
                 ['03', 'Learn', 'Keep what works. Share what failed. Repeat.'],
               ].map(([number, title, description]) => (
-                <article key={number} className="bg-gray-950 p-7 transition-colors hover:bg-gray-900 md:p-8">
+                <article key={number} className="bg-gray-950 p-7 text-white transition-colors hover:bg-gray-900 md:p-8">
                   <span className="font-mono text-sm text-gray-600">{number}</span>
                   <h3 className="mt-16 text-3xl font-black">{title}</h3>
                   <p className="mt-5 leading-relaxed text-gray-400">{description}</p>
