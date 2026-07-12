@@ -39,7 +39,7 @@ content/blogs/       MDX lab notes
 public/              Optimized images and favicon
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` when deploying to a different domain. It defaults to `https://crumbles.ai` and is used for canonical URLs, the sitemap, robots metadata, and Open Graph metadata.
+Set `NEXT_PUBLIC_SITE_URL` when deploying to a different domain. It defaults to `https://www.crumbles.dev` and is used for canonical URLs, the sitemap, robots metadata, and Open Graph metadata.
 
 ## Content
 
