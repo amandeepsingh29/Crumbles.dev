@@ -1,6 +1,6 @@
 # Crumbles
 
-Crumbles is a product website for AI agent infrastructure, built with Next.js. It presents the AI SRE control plane, the AI Knowledge Layer, supporting product surfaces, research notes, team, and open roles through a lightweight editorial interface.
+Crumbles is an AI agent operating layer, built with Next.js. Its product suite covers reliability, observability, knowledge, customer support, and workflow automation for agents running on top of existing software.
 
 ## Stack
 

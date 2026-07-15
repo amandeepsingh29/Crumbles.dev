@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 const statusStyles: Record<string, string> = {
-  'Core system': 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
-  Building: 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
+  Platform: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
+  'SaaS product': 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   Beta: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   'Early Access': 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
   'Internal Testing': 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
@@ -34,10 +34,10 @@ export default function ProductsPage() {
           </div>
           <div className="max-w-sm lg:justify-self-end">
             <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-              Two core systems for teams that need agents to be observable, grounded, and safe to change in production.
+              Three platform systems and two full-stack agent products for teams building on top of existing software.
             </p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-400">
-              <FiLayers className="text-sky-500" /> 02 core systems / 02 supporting surfaces
+              <FiLayers className="text-sky-500" /> 03 platform systems / 02 SaaS products
             </div>
           </div>
         </header>
@@ -51,6 +51,7 @@ export default function ProductsPage() {
                 <div>
                   <div className="mb-3 flex flex-wrap items-center gap-3">
                     <h2 className="text-2xl font-black tracking-tight text-gray-950 dark:text-white md:text-3xl">{product.title}</h2>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-sky-600 dark:text-sky-300">{product.category}</span>
                     <span className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider ${statusStyles[product.status] || statusStyles.Beta}`}>
                       {product.status}
                     </span>

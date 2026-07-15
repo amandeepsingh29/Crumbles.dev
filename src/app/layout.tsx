@@ -20,7 +20,7 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Crumbles",
-  description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
+  description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Crumbles",
     title: "Crumbles",
-    description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
+    description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
     url: siteUrl,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crumbles AI agent infrastructure" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Crumbles",
-    description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
+    description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
     images: ["/opengraph-image"],
   },
 };

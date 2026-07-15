@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
-  { number: '01', title: 'AI SRE', type: 'Core system', description: 'Trace, evaluate, and control every production agent run.', color: 'text-sky-500' },
-  { number: '02', title: 'AI Knowledge Layer', type: 'Core system', description: 'Give agents fresh, permissioned, source-backed context.', color: 'text-violet-500' },
-  { number: '03', title: 'Agent Replay', type: 'Building', description: 'Reproduce failures and compare changes before they ship.', color: 'text-rose-500' },
+  { number: '01', title: 'Sena', type: 'AI SRE', description: 'Keep production agents reliable with incidents, SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
+  { number: '02', title: 'Tracy', type: 'Observability', description: 'See every prompt, model call, tool call, handoff, and output.', color: 'text-sky-500' },
+  { number: '03', title: 'Atlas', type: 'Knowledge layer', description: 'Give agents permission-aware, fresh, source-backed context.', color: 'text-sky-500' },
+  { number: '04', title: 'Clara', type: 'Customer support', description: 'Resolve customer questions with approved knowledge and safe actions.', color: 'text-sky-500' },
+  { number: '05', title: 'Riley', type: 'Workflow automation', description: 'Coordinate work across the tools your teams already use.', color: 'text-sky-500' },
 ];
 
 export default function Home() {
@@ -36,9 +38,9 @@ export default function Home() {
 
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-gray-950/15 bg-gray-950/15 dark:border-white/15 dark:bg-white/15 sm:grid-cols-3">
             {[
-              ['RUNS', 'observable by default'],
-              ['DATA', 'source-backed context'],
-              ['SAFE', 'to change in production'],
+              ['05', 'connected products'],
+              ['03', 'platform systems'],
+              ['02', 'full-stack agents'],
             ].map(([value, label]) => (
               <div key={label} className="bg-[#f4f1e8]/90 p-6 dark:bg-gray-950/90">
                 <p className="font-mono text-3xl font-bold text-gray-950 dark:text-white">{value}</p>
@@ -84,7 +86,7 @@ export default function Home() {
           </div>
           <div className="border-t border-gray-950/15 dark:border-white/15">
             {projects.map((project) => (
-              <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(260px,0.8fr)_minmax(0,1.2fr)_160px] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
+              <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(0,0.8fr)_minmax(0,1.2fr)_160px] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
                 <span className="font-mono text-sm text-gray-400">{project.number}</span>
                 <h3 className="text-2xl font-black tracking-tight text-gray-950 dark:text-white">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
@@ -101,8 +103,8 @@ export default function Home() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-300 dark:text-sky-600">Why this exists</p>
             <div className="mt-12 space-y-8">
               <div className="border-l-2 border-sky-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">INPUT</p><p className="mt-2 text-xl font-black">Events, documents, tools, models</p></div>
-              <div className="ml-8 border-l-2 border-violet-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">CONTROL PLANE</p><p className="mt-2 text-xl font-black">AI SRE + Knowledge Layer</p></div>
-              <div className="ml-16 border-l-2 border-emerald-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">OUTPUT</p><p className="mt-2 text-xl font-black">Agents you can trust in production</p></div>
+              <div className="ml-8 border-l-2 border-violet-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">PLATFORM</p><p className="mt-2 text-xl font-black">Sena + Tracy + Atlas</p></div>
+              <div className="ml-16 border-l-2 border-emerald-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">PRODUCTS</p><p className="mt-2 text-xl font-black">Clara + Riley for real work</p></div>
             </div>
           </div>
           <div className="max-w-xl">
@@ -124,7 +126,7 @@ export default function Home() {
             </div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link></div></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><div className="mt-5 flex items-center gap-2 text-sm text-gray-300"><FiActivity className="text-emerald-300" /> Agent reliability</div><p className="mt-3 text-sm leading-relaxed text-gray-500">Observe every run. Ground every answer.</p></div>
-            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><p className="mt-5 text-sm leading-relaxed text-gray-400">AI SRE and source-backed knowledge infrastructure.</p></div>
+            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Products</p><p className="mt-5 text-sm leading-relaxed text-gray-400">Sena, Tracy, Atlas, Clara, and Riley.</p></div>
           </div>
           <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span> AI Labs</span><span>Built to be inspected.</span></div>
         </div>
