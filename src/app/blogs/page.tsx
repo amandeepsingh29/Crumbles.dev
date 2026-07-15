@@ -28,7 +28,7 @@ export default function BlogsPage() {
         <header className="mb-16 flex flex-col gap-8 border-b border-gray-900/15 pb-10 md:flex-row md:items-end md:justify-between dark:border-white/15">
           <div>
             <p className="mb-5 text-xs font-black uppercase tracking-[0.3em] text-sky-500 dark:text-sky-300">02 / Field notes</p>
-            <h1 className="text-7xl font-black leading-[0.88] tracking-[-0.03em] text-gray-950 dark:text-white md:text-9xl lg:text-[10.5rem]">Lab notes.</h1>
+            <h1 className="text-6xl font-black leading-none tracking-[-0.03em] text-gray-950 dark:text-white md:text-8xl">Lab notes.</h1>
           </div>
           <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Technical notes on operating AI agents, evaluating failures, and building reliable context systems.</p>
         </header>
