@@ -1,26 +1,52 @@
 ---
-title: "The Architecture of Crumbles AI Labs"
+title: "The Architecture of the Crumbles Agent Layer"
 date: "June 22, 2026"
-excerpt: "A deep dive into how we built our interactive 3D WebGL infrastructure using Next.js and React Three Fiber."
+excerpt: "How Sena, Tracy, and Atlas form the platform underneath Clara and Riley—the full-stack products that put agents to work."
 ---
 
-# The Architecture of Crumbles AI Labs
+# The Architecture of the Crumbles Agent Layer
 
-Building a website for an AI lab requires a delicate balance. It needs to feel highly technical and experimental, but it also needs to perform well and communicate a clear brand identity.
+Crumbles is built around a simple boundary: companies keep the software they already use, and agents operate across it through a reliable control layer.
 
-Here is how we built the Crumbles AI Labs platform.
+That layer has three platform systems. **Sena** keeps production agents reliable. **Tracy** makes every model and tool interaction inspectable. **Atlas** gives agents current, permission-aware context. On top of those systems, we build full-stack products such as **Clara** for customer support and **Riley** for workflow automation.
 
-## The Tech Stack
+## The platform boundary
 
-- **Next.js (App Router)**: For server-side rendering, routing, and overall architecture.
-- **React Three Fiber (R3F)**: To bring the chaotic, particle-based "crumble" identity to life in WebGL.
-- **Zustand**: For lightweight, cross-context state management between HTML and WebGL.
-- **Tailwind CSS v4**: For rapid, highly-customized styling using our unique crayon-inspired color palette.
+The platform sits between an agent and the systems it needs to use:
 
-## The 3D Canvas
+- **Sena / AI SRE**: Owns incidents, SLOs, fallbacks, cost controls, and safe rollbacks.
+- **Tracy / observability**: Captures prompts, model calls, tool calls, handoffs, retrieved context, tokens, latency, and outputs.
+- **Atlas / knowledge layer**: Connects documents, tickets, code, and events with permissions, freshness, provenance, and retrieval controls.
 
-The core of our brand identity is the `<CrumbleCanvas />`. Instead of putting it on a single page, we elevated it to the global `layout.tsx`.
+This separation keeps product agents focused on user outcomes while the platform handles reliability, visibility, and context.
 
-This means as you navigate between pages—using Framer Motion for smooth transitions—the 3D particles continue to orbit in the background, uninterrupted. It creates a seamless, immersive experience.
+## From request to result
 
-We use **InstancedMesh** for the particles. Instead of rendering 2,000 individual meshes (which would tank performance), we render a single geometry and material, heavily optimized for both desktop and mobile.
+Every agent task follows the same controlled path:
+
+1. **Understand** the request and identify the tools and sources it needs.
+2. **Retrieve** relevant context through Atlas, respecting source permissions and freshness.
+3. **Act** through approved tools with Sena policies around retries, timeouts, and fallbacks.
+4. **Trace** the complete execution in Tracy, including the evidence used and every external action.
+5. **Evaluate** the result and route uncertain or unsafe work to a human.
+
+The result is not just an answer. It is an answer with a trace, a source trail, and an operational record.
+
+## Products built on the layer
+
+The platform becomes useful when it solves a complete workflow:
+
+- **Clara** answers customer questions from approved knowledge, checks account context, takes safe actions, and escalates when it cannot resolve an issue.
+- **Riley** coordinates work across Slack, Jira, GitHub, CRM systems, and internal APIs, from incident response to approvals and follow-ups.
+
+Both products use the same reliability, observability, and knowledge primitives. That gives Crumbles a shared foundation without forcing every customer workflow into the same interface.
+
+## The design rules
+
+Three rules shape the architecture:
+
+- **Existing software stays in place.** Crumbles connects to the systems a company already trusts instead of replacing them first.
+- **Agent actions are inspectable.** Teams can see what an agent knew, what it called, and why it produced a result.
+- **Autonomy is earned.** Agents begin with narrow permissions and expand only when their outcomes are measurable and reliable.
+
+This is the core idea behind Crumbles: an operating layer for agents, plus focused software that turns that layer into useful work.

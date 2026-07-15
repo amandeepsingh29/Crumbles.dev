@@ -51,12 +51,12 @@ const mdxComponents = {
   },
   h3: ({ children }: { children?: ReactNode }) => <h3 className="pt-6 text-2xl font-black tracking-tight text-gray-950 dark:text-white">{children}</h3>,
   p: ({ children }: { children?: ReactNode }) => <p className="text-lg leading-[1.85] text-gray-700 dark:text-gray-300">{children}</p>,
-  ul: ({ children }: { children?: ReactNode }) => <ul className="space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:text-violet-500 dark:text-gray-300">{children}</ul>,
-  ol: ({ children }: { children?: ReactNode }) => <ol className="space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:font-black marker:text-violet-500 dark:text-gray-300">{children}</ol>,
+  ul: ({ children }: { children?: ReactNode }) => <ul className="space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:text-sky-500 dark:text-gray-300">{children}</ul>,
+  ol: ({ children }: { children?: ReactNode }) => <ol className="space-y-3 pl-6 text-lg leading-relaxed text-gray-700 marker:font-black marker:text-sky-500 dark:text-gray-300">{children}</ol>,
   li: ({ children }: { children?: ReactNode }) => <li className="pl-2">{children}</li>,
-  blockquote: ({ children }: { children?: ReactNode }) => <blockquote className="my-10 border-l-4 border-violet-400 bg-violet-50/70 px-6 py-5 text-xl font-bold leading-relaxed text-gray-900 dark:bg-violet-950/30 dark:text-gray-100">{children}</blockquote>,
+  blockquote: ({ children }: { children?: ReactNode }) => <blockquote className="my-10 border-l-4 border-sky-400 bg-sky-50/70 px-6 py-5 text-xl font-bold leading-relaxed text-gray-900 dark:bg-sky-950/30 dark:text-gray-100">{children}</blockquote>,
   strong: ({ children }: { children?: ReactNode }) => <strong className="font-black text-gray-950 dark:text-white">{children}</strong>,
-  a: ({ children, href }: { children?: ReactNode; href?: string }) => <a href={href} className="font-bold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-violet-500 dark:text-violet-300">{children}</a>,
+  a: ({ children, href }: { children?: ReactNode; href?: string }) => <a href={href} className="font-bold text-sky-700 underline decoration-sky-300 underline-offset-4 transition-colors hover:text-sky-500 dark:text-sky-300">{children}</a>,
 };
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <header className="mt-12 border-b border-gray-950/15 pb-14 dark:border-white/15 md:mt-16 md:pb-20">
           <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-black uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400">
-            <span className="flex items-center gap-2 text-violet-700 dark:text-violet-300"><FiHash /> Field note {String(blogIndex).padStart(2, '0')}</span>
+            <span className="flex items-center gap-2 text-sky-500 dark:text-sky-300"><FiHash /> Field note {String(blogIndex).padStart(2, '0')}</span>
             <span className="h-1 w-1 rounded-full bg-gray-400" />
             <span>{blog.date}</span>
             <span className="h-1 w-1 rounded-full bg-gray-400" />
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <aside className="lg:sticky lg:top-32 lg:self-start">
             <div className="rounded-3xl border border-gray-950/10 bg-white/65 p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-violet-700 dark:text-violet-300">In this note</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-sky-500 dark:text-sky-300">In this note</p>
               {headings.length > 0 ? (
                 <nav className="mt-5 space-y-4" aria-label="Article sections">
                   {headings.map((heading, index) => (
