@@ -25,7 +25,7 @@ export default function ProductsPage() {
       <div className="mx-auto max-w-7xl">
         <header className="grid gap-10 border-b border-gray-900/15 pb-16 dark:border-white/15 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div>
-            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
+            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sky-500 dark:text-sky-300">
               <span className="h-2 w-2 rounded-full bg-sky-500" /> 01 / Agent infrastructure
             </p>
             <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">
@@ -77,7 +77,7 @@ export default function ProductsPage() {
 
         <footer className="mt-12 flex flex-col gap-4 text-sm text-gray-500 dark:text-gray-400 md:flex-row md:items-center md:justify-between">
           <span>Built for teams shipping agents.</span>
-          <Link href="/careers" className="font-black text-gray-900 hover:text-sky-600 dark:text-white dark:hover:text-sky-300">Build the next layer <FiArrowUpRight className="ml-1 inline" /></Link>
+          <Link href="/careers" className="font-black text-gray-900 hover:text-sky-500 dark:text-white dark:hover:text-sky-300">Build the next layer <FiArrowUpRight className="ml-1 inline" /></Link>
         </footer>
       </div>
     </main>

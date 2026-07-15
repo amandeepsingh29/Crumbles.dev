@@ -23,15 +23,15 @@ export default function CareersPage() {
       <div className="mx-auto max-w-7xl">
         <header className="grid gap-10 border-b border-gray-900/15 pb-16 dark:border-white/15 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
-            <p className="mb-6 text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">04 / Build agent infrastructure</p>
-            <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">Build the <span className="text-sky-700 dark:text-sky-300">agent stack.</span></h1>
+            <p className="mb-6 text-xs font-black uppercase tracking-[0.3em] text-sky-500 dark:text-sky-300">04 / Build agent infrastructure</p>
+            <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">Build the <span className="text-sky-500 dark:text-sky-300">agent stack.</span></h1>
           </div>
           <p className="max-w-sm text-lg leading-relaxed text-gray-700 dark:text-gray-400 lg:justify-self-end">We are a small team working on hard systems problems with a generous definition of “done.”</p>
         </header>
 
         <div className="grid gap-16 pt-12 lg:grid-cols-[0.7fr_1.3fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-sky-700 dark:text-sky-300">The working agreement</p>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-sky-500 dark:text-sky-300">The working agreement</p>
             <p className="mt-6 max-w-md text-2xl font-black leading-tight text-gray-950 dark:text-white">Good infrastructure makes complex agent behavior observable and explainable.</p>
             <ul className="mt-10 space-y-4 border-t border-gray-900/15 pt-6 dark:border-white/15">
               {values.map((value) => <li key={value} className="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-gray-300"><FiCheck className="text-sky-600 dark:text-sky-300" /> {value}</li>)}

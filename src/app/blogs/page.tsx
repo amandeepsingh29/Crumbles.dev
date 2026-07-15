@@ -27,7 +27,7 @@ export default function BlogsPage() {
       <div className="mx-auto max-w-7xl">
         <header className="mb-16 flex flex-col gap-8 border-b border-gray-900/15 pb-10 md:flex-row md:items-end md:justify-between dark:border-white/15">
           <div>
-            <p className="mb-5 text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">02 / Field notes</p>
+            <p className="mb-5 text-xs font-black uppercase tracking-[0.3em] text-sky-500 dark:text-sky-300">02 / Field notes</p>
             <h1 className="text-6xl font-black leading-none tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">Lab notes.</h1>
           </div>
           <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Technical notes on operating AI agents, evaluating failures, and building reliable context systems.</p>
@@ -64,7 +64,7 @@ export default function BlogsPage() {
                 <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group grid gap-4 border-b border-gray-900/15 py-7 transition-colors hover:bg-white/70 md:grid-cols-[72px_1fr_auto] md:items-center md:px-4 dark:border-white/15 dark:hover:bg-white/[0.04]">
                   <span className="font-mono text-sm text-gray-400">0{index + 2}</span>
                   <div>
-                    <h3 className="text-2xl font-black tracking-tight text-gray-950 group-hover:text-sky-700 dark:text-white dark:group-hover:text-sky-300">{blog.title}</h3>
+                    <h3 className="text-2xl font-black tracking-tight text-gray-950 group-hover:text-sky-500 dark:text-white dark:group-hover:text-sky-300">{blog.title}</h3>
                     <p className="mt-2 max-w-2xl text-gray-600 dark:text-gray-400">{blog.excerpt}</p>
                   </div>
                   <span className="flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-400"><span>{formatDate(blog.date)}</span><FiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span>
