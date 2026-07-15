@@ -35,9 +35,9 @@ body {
 
 @font-face {
   font-family: "Neiko";
-  src: local("Neiko Regular"), local("Neiko");
+  src: url("/fonts/neiko-regular.otf") format("opentype");
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 400;
   font-display: swap;
 }
 
