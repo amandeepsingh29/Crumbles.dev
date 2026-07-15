@@ -118,7 +118,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 border-b border-white/15 pb-16 md:grid-cols-[1.4fr_0.6fr_0.6fr_1fr]">
             <div>
-              <h2 className="text-3xl font-black">Crumbles</h2>
+              <h2 className="font-brand text-3xl font-black">Crumbles</h2>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">Production infrastructure for AI agents.</p>
               {/* Social/contact buttons disabled until real destinations are available. */}
             </div>
