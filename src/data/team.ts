@@ -1,8 +1,8 @@
 export const teamMembers = [
   {
-    name: "Alex V.",
-    role: "Principal AI Engineer",
-    bio: "Alex breaks large language models to understand their failure modes. Previously built infrastructure at major cloud providers.",
+    name: "Amandeep Singh",
+    role: "Founding Engineer",
+    bio: "Amandeep builds reliable AI agent infrastructure across observability, evaluation, and source-backed context.",
   },
   {
     name: "Sam J.",
