@@ -29,10 +29,36 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   letter-spacing: 0.015em;
   overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    main > section,
+    main > div > section {
+      animation: section-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+  }
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0.35;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1,
@@ -49,19 +75,18 @@ h3 {
   font-display: swap;
 }
 
-/* Subtle scrollbar — thin and unobtrusive, but still visible as a scroll
-   affordance (previously hidden entirely). */
+/* Slim red scrollbar for a clear, branded scroll affordance. */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgb(156 163 175 / 0.4) transparent;
+  scrollbar-color: #ef4444 transparent;
 }
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(156 163 175 / 0.4);
-  border-radius: 4px;
+  background: #ef4444;
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
