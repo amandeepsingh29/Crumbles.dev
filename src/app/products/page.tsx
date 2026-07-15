@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { FiArrowUpRight, FiGithub, FiLayers } from 'react-icons/fi';
+import { FiArrowUpRight, FiLayers } from 'react-icons/fi';
 import { products } from '@/data/products';
 
 export const metadata: Metadata = {
@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 const statusStyles: Record<string, string> = {
   Platform: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   'SaaS product': 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
-  Beta: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
-  'Early Access': 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
-  'Internal Testing': 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
-  'Research Phase': 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300',
 };
 
 export default function ProductsPage() {
@@ -44,7 +40,6 @@ export default function ProductsPage() {
 
         <div className="mt-10">
           {products.map((product, index) => {
-            const isLive = product.link !== '#';
             const content = (
               <div className="group grid gap-6 border-b border-gray-900/15 py-8 transition-colors hover:bg-white/60 dark:border-white/15 dark:hover:bg-white/[0.04] md:grid-cols-[72px_minmax(0,1fr)_auto] md:items-center md:px-5">
                 <span className="font-mono text-sm text-gray-400">0{index + 1}</span>
@@ -59,20 +54,13 @@ export default function ProductsPage() {
                   <p className="max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-400">{product.description}</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm font-black text-gray-700 dark:text-gray-300 md:justify-self-end">
-                  {isLive ? <FiGithub /> : <span className="text-gray-400">Soon</span>}
-                  <span>{isLive ? 'Open product' : 'Building'}</span>
+                  <span>View product</span>
                   <FiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
               </div>
             );
 
-            return isLive ? (
-              <Link key={product.title} href={product.link} target="_blank" rel="noopener noreferrer" className="block">
-                {content}
-              </Link>
-            ) : (
-              <div key={product.title}>{content}</div>
-            );
+            return <Link key={product.title} href={product.link} className="block">{content}</Link>;
           })}
         </div>
 

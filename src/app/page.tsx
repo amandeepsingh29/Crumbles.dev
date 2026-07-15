@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
-  { number: '01', title: 'Agent Sena', type: 'AI SRE', description: 'Keep production agents reliable with incidents, SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
-  { number: '02', title: 'Observer Tracy', type: 'Observability', description: 'See every prompt, model call, tool call, handoff, and output.', color: 'text-sky-500' },
-  { number: '03', title: 'Captain Atlas', type: 'Knowledge layer', description: 'Give agents permission-aware, fresh, source-backed context.', color: 'text-sky-500' },
-  { number: '04', title: 'Agent Clara', type: 'Customer support', description: 'Resolve customer questions with approved knowledge and safe actions.', color: 'text-sky-500' },
-  { number: '05', title: 'Operator Riley', type: 'Workflow automation', description: 'Coordinate work across the tools your teams already use.', color: 'text-sky-500' },
+  { number: '01', slug: 'sena', title: 'Agent Sena', type: 'AI SRE', description: 'Keep production agents reliable with incidents, SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
+  { number: '02', slug: 'tracy', title: 'Observer Tracy', type: 'Observability', description: 'See every prompt, model call, tool call, handoff, and output.', color: 'text-sky-500' },
+  { number: '03', slug: 'atlas', title: 'Captain Atlas', type: 'Knowledge layer', description: 'Give agents permission-aware, fresh, source-backed context.', color: 'text-sky-500' },
+  { number: '04', slug: 'clara', title: 'Agent Clara', type: 'Customer support', description: 'Resolve customer questions with approved knowledge and safe actions.', color: 'text-sky-500' },
+  { number: '05', slug: 'riley', title: 'Operator Riley', type: 'Workflow automation', description: 'Coordinate work across the tools your teams already use.', color: 'text-sky-500' },
 ];
 
 export default function Home() {
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
           <div className="border-t border-gray-950/15 dark:border-white/15">
             {projects.map((project) => (
-              <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(0,0.8fr)_minmax(0,1.2fr)_160px] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
+              <Link key={project.number} href={`/products/${project.slug}`} className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(0,0.8fr)_minmax(0,1.2fr)_160px] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
                 <span className="font-mono text-sm text-gray-400">{project.number}</span>
                 <h3 className="text-lg font-black tracking-tight text-gray-950 dark:text-white md:text-xl">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
@@ -119,7 +119,7 @@ export default function Home() {
 
       <footer className="bg-gray-950 px-6 pb-8 pt-20 text-white">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 border-b border-white/15 pb-16 md:grid-cols-[1.4fr_0.6fr_0.6fr_1fr]">
+          <div className="grid gap-12 border-b border-white/15 pb-16 md:grid-cols-[1.2fr_0.7fr_0.7fr_1fr_0.8fr]">
             <div>
               <div className="flex items-center gap-3">
                 <Image src="/logo.png" alt="Crumbles logo" width={40} height={40} className="h-10 w-10 rounded-xl object-contain" />
@@ -128,11 +128,12 @@ export default function Home() {
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">Production infrastructure for AI agents.</p>
               {/* Social/contact buttons disabled until real destinations are available. */}
             </div>
-            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link></div></div>
+            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link><Link href="/contact" className="block hover:text-white">Contact</Link></div></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><div className="mt-5 flex items-center gap-2 text-sm text-gray-300"><FiActivity className="text-emerald-300" /> Agent reliability</div><p className="mt-3 text-sm leading-relaxed text-gray-500">Observe every run. Ground every answer.</p></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Products</p><p className="mt-5 text-sm leading-relaxed text-gray-400">Sena, Tracy, Atlas, Clara, and Riley.</p></div>
+            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Resources</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/docs" className="block hover:text-white">Docs</Link><Link href="/pricing" className="block hover:text-white">Pricing</Link><Link href="/status" className="block hover:text-white">Status</Link><Link href="/security" className="block hover:text-white">Security</Link><Link href="/privacy" className="block hover:text-white">Privacy</Link><Link href="/terms" className="block hover:text-white">Terms</Link></div></div>
           </div>
-          <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span> AI Labs</span><span>Built to be inspected.</span></div>
+          <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span></span><span>Built to be inspected.</span></div>
         </div>
       </footer>
     </main>

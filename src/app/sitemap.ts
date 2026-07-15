@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { getBlogs } from '@/data/blogs';
+import { products } from '@/data/products';
 import { siteUrl } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/products', '/blogs', '/team', '/careers'].map((path) => ({
+  const staticRoutes = ['', '/products', '/blogs', '/team', '/careers', '/contact', '/docs', '/pricing', '/status', '/security', '/privacy', '/terms'].map((path) => ({
     url: `${siteUrl}${path}`,
     changeFrequency: 'weekly' as const,
     priority: path === '' ? 1 : 0.8,
@@ -16,5 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const productRoutes = products.map((product) => ({
+    url: `${siteUrl}${product.link}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...productRoutes, ...blogRoutes];
 }

@@ -58,7 +58,7 @@ export default function CareersPage() {
                         <p className="mt-6 max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">{role.description}</p>
                       </div>
                     </div>
-                    <a href={`mailto:careers@crumbles.ai?subject=${encodeURIComponent(`Application: ${role.title}`)}`} className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-gray-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Apply <FiArrowUpRight /></a>
+                    <a href={`mailto:careers@crumbles.dev?subject=${encodeURIComponent(`Application: ${role.title}`)}`} className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-gray-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Apply <FiArrowUpRight /></a>
                   </div>
                 </article>
               ))}

@@ -1,20 +1,20 @@
 export const openRoles = [
   {
-    title: "AI Systems Engineer",
+    title: "Agent Platform Engineer",
     type: "Full-time",
     location: "Remote / San Francisco",
-    description: "You will build the core infrastructure that allows our agents to communicate and reason securely. You should love breaking things and putting them back together.",
+    description: "Build the reliability, observability, and execution infrastructure behind Sena and Tracy.",
   },
   {
-    title: "Protocol Designer",
+    title: "Knowledge Systems Engineer",
     type: "Full-time",
     location: "Remote",
-    description: "Design the multi-agent communication protocols of tomorrow. Experience with distributed systems and consensus algorithms required.",
+    description: "Build Atlas connectors, retrieval controls, provenance, and permission-aware context for production agents.",
   },
   {
-    title: "Creative Developer",
-    type: "Contract",
+    title: "Agent Product Engineer",
+    type: "Full-time",
     location: "Remote",
-    description: "Help us build beautiful, interactive WebGL experiences that explain complex AI concepts to the world. Three.js experience is a must.",
+    description: "Build Clara and Riley workflows that turn the Crumbles platform into useful customer and operational products.",
   }
 ];

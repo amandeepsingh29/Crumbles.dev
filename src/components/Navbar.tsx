@@ -26,6 +26,7 @@ export default function Navbar() {
     { name: 'Blogs', href: '/blogs' },
     { name: 'Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => pathname === href;

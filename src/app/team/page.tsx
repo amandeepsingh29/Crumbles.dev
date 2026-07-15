@@ -24,7 +24,7 @@ export default function TeamPage() {
           </div>
           <div className="lg:justify-self-end">
             <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Engineers and systems thinkers building the control plane, context layer, and evaluation loops agents need in production.</p>
-            <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-500"><FiCpu className="text-sky-500 dark:text-sky-300" /> 04 minds in the loop</div>
+            <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-500"><FiCpu className="text-sky-500 dark:text-sky-300" /> 01 founding engineer</div>
           </div>
         </header>
 
