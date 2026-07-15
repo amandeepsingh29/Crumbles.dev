@@ -8,6 +8,6 @@ export default function TermsPage() {
     { title: 'Use of products', body: 'Customers remain responsible for the workflows, permissions, data, and actions they configure for their agents.' },
     { title: 'Human oversight', body: 'Crumbles products should be configured with approval boundaries appropriate to the consequences of each action.' },
     { title: 'Service terms', body: 'Availability, support, security commitments, billing, and data processing will be defined in the final agreement.' },
-    { title: 'Questions', body: 'Email hello@crumbles.dev for the current design-partner terms.' },
-  ]} ctaLabel="Ask about terms" ctaHref="mailto:hello@crumbles.dev?subject=Crumbles%20terms" />;
+    { title: 'Questions', body: 'Email team@crumbles.dev for the current design-partner terms.' },
+  ]} ctaLabel="Ask about terms" ctaHref="mailto:team@crumbles.dev?subject=Crumbles%20terms" />;
 }

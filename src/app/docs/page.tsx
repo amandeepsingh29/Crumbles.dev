@@ -9,5 +9,5 @@ export default function DocsPage() {
     { title: 'Tracy', body: 'Execution traces for model calls, prompts, tools, handoffs, retrieved context, and outputs.' },
     { title: 'Atlas', body: 'Permission-aware retrieval with source provenance, freshness, and connector controls.' },
     { title: 'Integration brief', body: 'Start with your existing APIs and software. Crumbles sits above them and keeps each action traceable.' },
-  ]} ctaLabel="Request documentation" ctaHref="mailto:hello@crumbles.dev?subject=Request%20documentation" />;
+  ]} ctaLabel="Request documentation" ctaHref="mailto:team@crumbles.dev?subject=Request%20documentation" />;
 }

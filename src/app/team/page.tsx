@@ -1,4 +1,4 @@
-import { FiCpu } from 'react-icons/fi';
+import { FiArrowUpRight, FiCpu } from 'react-icons/fi';
 import type { Metadata } from 'next';
 import { teamMembers } from '@/data/team';
 
@@ -25,6 +25,7 @@ export default function TeamPage() {
           <div className="lg:justify-self-end">
             <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Engineers and systems thinkers building the control plane, context layer, and evaluation loops agents need in production.</p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-500"><FiCpu className="text-sky-500 dark:text-sky-300" /> 01 founding engineer</div>
+            <a href="mailto:team@crumbles.dev" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gray-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Email the team <FiArrowUpRight /></a>
           </div>
         </header>
 

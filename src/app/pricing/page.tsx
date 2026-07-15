@@ -8,6 +8,6 @@ export default function PricingPage() {
     { title: 'Platform access', body: 'Sena, Tracy, and Atlas are scoped around runs, traces, indexed sources, retention, and deployment requirements.' },
     { title: 'Product access', body: 'Clara and Riley are scoped around seats, connected systems, workflow volume, and approval requirements.' },
     { title: 'Deployment', body: 'Teams can discuss hosted, private, and enterprise deployment requirements before committing to a plan.' },
-    { title: 'Get a quote', body: 'Email hello@crumbles.dev with your agent count, data sources, and primary workflow for a concrete access conversation.' },
-  ]} ctaLabel="Discuss pricing" ctaHref="mailto:hello@crumbles.dev?subject=Crumbles%20pricing" />;
+    { title: 'Get a quote', body: 'Email team@crumbles.dev with your agent count, data sources, and primary workflow for a concrete access conversation.' },
+  ]} ctaLabel="Discuss pricing" ctaHref="mailto:team@crumbles.dev?subject=Crumbles%20pricing" />;
 }

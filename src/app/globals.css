@@ -61,6 +61,29 @@ body {
   }
 }
 
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-page-mark {
+  display: block;
+  width: 12rem;
+  aspect-ratio: 1;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-logo-spin {
+    animation: logo-spin 8s linear infinite;
+  }
+}
+
 h1,
 h2,
 h3 {

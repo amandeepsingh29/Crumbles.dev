@@ -11,6 +11,8 @@ export const metadata: Metadata = {
 
 const typeStyles: Record<string, string> = {
   'Full-time': 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
+  'Founding engineer': 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
+  Intern: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   Contract: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   'Part-time': 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
 };
@@ -58,7 +60,7 @@ export default function CareersPage() {
                         <p className="mt-6 max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">{role.description}</p>
                       </div>
                     </div>
-                    <a href={`mailto:careers@crumbles.dev?subject=${encodeURIComponent(`Application: ${role.title}`)}`} className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-gray-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Apply <FiArrowUpRight /></a>
+                    <a href={`mailto:team@crumbles.dev?subject=${encodeURIComponent(`Application: ${role.title}`)}`} className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-gray-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Apply <FiArrowUpRight /></a>
                   </div>
                 </article>
               ))}

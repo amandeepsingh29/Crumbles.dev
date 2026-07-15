@@ -8,6 +8,6 @@ export default function SecurityPage() {
     { title: 'Least privilege', body: 'Agents should receive only the tools, sources, and actions needed for the current workflow.' },
     { title: 'Traceability', body: 'Every retrieved source and external action should be available for review after a run.' },
     { title: 'Approval gates', body: 'High-impact actions should pause for an explicit approval instead of relying on model confidence.' },
-    { title: 'Security questions', body: 'Email hello@crumbles.dev for the current architecture and security review process.' },
-  ]} ctaLabel="Ask a security question" ctaHref="mailto:hello@crumbles.dev?subject=Crumbles%20security" />;
+    { title: 'Security questions', body: 'Email team@crumbles.dev for the current architecture and security review process.' },
+  ]} ctaLabel="Ask a security question" ctaHref="mailto:team@crumbles.dev?subject=Crumbles%20security" />;
 }

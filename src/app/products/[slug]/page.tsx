@@ -42,7 +42,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <p className="mb-6 text-xs font-black uppercase tracking-[0.28em] text-sky-500 dark:text-sky-300">{product.category} / {product.status}</p>
           <h1 className="text-6xl font-black leading-[0.9] tracking-[-0.04em] text-gray-950 dark:text-white md:text-8xl">{product.title}</h1>
           <p className="mt-10 max-w-3xl text-2xl font-medium leading-relaxed text-gray-600 dark:text-gray-300">{product.promise}</p>
-          <a href={`mailto:hello@crumbles.dev?subject=${encodeURIComponent(`Request access: ${product.title}`)}`} className="mt-10 inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">
+          <a href={`mailto:team@crumbles.dev?subject=${encodeURIComponent(`Request access: ${product.title}`)}`} className="mt-10 inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">
             Request access <FiArrowUpRight />
           </a>
         </header>
