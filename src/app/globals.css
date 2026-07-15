@@ -84,6 +84,17 @@ body {
   }
 }
 
+.panther-mascot {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+  width: clamp(5.5rem, 13vw, 9rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 20px rgb(15 23 42 / 0.16));
+}
+
 h1,
 h2,
 h3 {
