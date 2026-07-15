@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { DynaPuff, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const dynaPuff = DynaPuff({
+  variable: "--font-dynapuff",
   subsets: ["latin"],
 });
 
@@ -45,7 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistMono.variable} antialiased`}
+      className={`${geistMono.variable} ${dynaPuff.variable} antialiased`}
     >
       <head>
         {/* Apply the saved/system theme before paint to avoid a flash of the
