@@ -1,17 +1,49 @@
 ---
-title: "The State of Multi-Agent Systems in 2026"
+title: "What Production Multi-Agent Systems Actually Need"
 date: "May 14, 2026"
-excerpt: "Agents are no longer just conversational wrappers. They are independent workers. Here is how they are evolving."
+excerpt: "Multi-agent systems are becoming distributed software. The hard problems are no longer prompts—they are contracts, context, observability, and controlled autonomy."
 ---
 
-# The State of Multi-Agent Systems in 2026
+# What Production Multi-Agent Systems Actually Need
 
-We've moved past the era where an "AI Agent" was just a clever prompt wrapped around an LLM.
+An AI agent is easy to demonstrate. Give a model a goal, connect a tool, and watch it complete a task. A production multi-agent system is different: several workers must coordinate, use shared information, recover from failure, and remain accountable for every action.
 
-In 2026, multi-agent systems resemble distributed microservices more than chatbots. We are seeing the rise of:
+The hard problem is not making agents act independently. It is making their independence predictable.
 
-1. **Protocol-Driven Communication**: Agents no longer send natural language to each other. They use highly structured, compressed protocols designed for low-latency machine-to-machine consensus.
-2. **Specialized Hierarchies**: A "Manager" agent delegates to a "Coder" agent, who delegates to an "Auditor" agent.
-3. **Continuous Learning Loops**: Agents that update their own vector databases based on the outcome of previous tasks.
+## Four requirements for production agents
 
-At Crumbles AI Labs, we are pushing these boundaries every day. We believe the next breakthrough won't come from a bigger model, but from a better architecture for thousands of smaller models working together.
+### 1. Explicit contracts
+
+Agents need clear inputs, outputs, permissions, and handoff rules. A planning agent should not silently change the contract expected by an execution agent. Structured messages and typed tool results make failures visible at the boundary where they happen.
+
+### 2. Shared, current context
+
+Every agent should know which evidence it used and whether that evidence is still current. Documents, tickets, repositories, and operational events need permissions, provenance, and freshness—not just embeddings in a vector store.
+
+### 3. Complete execution traces
+
+When a run fails, a final answer is not enough to debug it. Teams need the full chain: prompt, model, retrieved context, tool call, handoff, retry, latency, token usage, and output. Without that trace, agent operations become guesswork.
+
+### 4. Bounded autonomy
+
+Agents should earn access to more tools and more consequential actions over time. Start with narrow permissions, require approval for risky operations, and use measurable outcomes to expand the boundary.
+
+## The platform underneath the product
+
+These requirements create a platform layer beneath every useful agent product:
+
+- **Sena** provides AI SRE: incidents, SLOs, fallbacks, cost controls, and safe rollbacks.
+- **Tracy** captures LLM and agent execution: prompts, tools, handoffs, context, latency, and outputs.
+- **Atlas** provides permission-aware, source-backed knowledge for retrieval and decisions.
+
+The platform should be shared. The user experience should not.
+
+## Where the products begin
+
+Customer support and internal operations need different interfaces, but they can use the same platform primitives.
+
+**Clara** applies the layer to customer support. It answers from approved knowledge, checks account context, takes safe actions, and escalates when it reaches the edge of its authority.
+
+**Riley** applies the layer to workflow automation. It coordinates work across Slack, Jira, GitHub, CRM systems, and internal APIs while keeping every action traceable.
+
+That is the practical direction for multi-agent systems: fewer opaque demos, more dependable software boundaries. The winning systems will not be the ones with the most agents. They will be the ones teams can observe, explain, and safely improve.
