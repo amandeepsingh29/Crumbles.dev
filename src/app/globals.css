@@ -17,7 +17,7 @@
 
   --font-sans: var(--font-neiko);
   --font-mono: var(--font-geist-mono);
-  --font-dynapuff: var(--font-dynapuff);
+  --font-brand: var(--font-dynapuff);
 }
 
 :root {

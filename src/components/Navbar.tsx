@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setIsOpen(false)}>
           <Image src="/logo.png" alt="Crumbles Logo" width={36} height={36} style={{ width: 36, height: 36 }} className="rounded-lg object-contain" />
-          <span className="text-xl font-black tracking-tight text-gray-900 dark:text-white hidden sm:inline">
+          <span className="font-brand text-xl font-black tracking-tight text-gray-900 dark:text-white hidden sm:inline">
             Crumbles
           </span>
         </Link>

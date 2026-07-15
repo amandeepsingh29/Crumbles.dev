@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="grid gap-14 pt-14 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-24 lg:pt-20">
           <article className="min-w-0">
             <div className="mb-10 flex items-center justify-between border-y border-gray-950/15 py-4 text-xs font-black uppercase tracking-[0.2em] text-gray-500 dark:border-white/15 dark:text-gray-400">
-              <span><span className="font-dynapuff">Crumbles</span> research</span>
+              <span><span className="font-brand">Crumbles</span> research</span>
               <span>Read slowly</span>
             </div>
             <div className="space-y-6">

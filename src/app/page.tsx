@@ -20,13 +20,13 @@ export default function Home() {
 
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
-              <p className="mb-6 text-sm font-black uppercase tracking-[0.22em] text-sky-600 dark:text-sky-300"><span className="font-dynapuff normal-case tracking-normal">Crumbles</span> / Core systems</p>
+              <p className="mb-6 text-sm font-black uppercase tracking-[0.22em] text-sky-600 dark:text-sky-300"><span className="font-brand normal-case tracking-normal">Crumbles</span> / Core systems</p>
               <h1 className="max-w-5xl text-6xl font-black leading-[0.86] tracking-[-0.07em] md:text-8xl lg:text-[9rem]">
                 Production <span className="text-sky-500">infrastructure</span> for AI agents.
               </h1>
             </div>
             <div className="max-w-md lg:justify-self-end">
-              <p className="text-xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"><span className="font-dynapuff">Crumbles</span> gives agent teams the control plane and knowledge layer they need to run reliably in production.</p>
+              <p className="text-xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"><span className="font-brand">Crumbles</span> gives agent teams the control plane and knowledge layer they need to run reliably in production.</p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link href="/products" className="inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Explore the stack <FiArrowRight /></Link>
                 <Link href="#architecture" className="inline-flex items-center gap-3 rounded-full border border-gray-950/25 px-6 py-3 text-sm font-black text-gray-950 transition-colors hover:bg-gray-950 hover:text-white dark:border-white/25 dark:text-white dark:hover:bg-white dark:hover:text-gray-950">See the architecture <FiArrowDown /></Link>
@@ -126,7 +126,7 @@ export default function Home() {
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><div className="mt-5 flex items-center gap-2 text-sm text-gray-300"><FiActivity className="text-emerald-300" /> Agent reliability</div><p className="mt-3 text-sm leading-relaxed text-gray-500">Observe every run. Ground every answer.</p></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><p className="mt-5 text-sm leading-relaxed text-gray-400">AI SRE and source-backed knowledge infrastructure.</p></div>
           </div>
-          <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-dynapuff">Crumbles</span> AI Labs</span><span>Built to be inspected.</span></div>
+          <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span> AI Labs</span><span>Built to be inspected.</span></div>
         </div>
       </footer>
     </main>
