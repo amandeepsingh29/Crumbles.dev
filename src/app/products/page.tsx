@@ -50,7 +50,7 @@ export default function ProductsPage() {
                 <span className="font-mono text-sm text-gray-400">0{index + 1}</span>
                 <div>
                   <div className="mb-3 flex flex-wrap items-center gap-3">
-                    <h2 className="text-2xl font-black tracking-tight text-gray-950 dark:text-white md:text-3xl">{product.title}</h2>
+                    <h2 className="text-xl font-black tracking-tight text-gray-950 dark:text-white md:text-2xl">{product.title}</h2>
                     <span className="text-xs font-bold uppercase tracking-[0.16em] text-sky-600 dark:text-sky-300">{product.category}</span>
                     <span className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider ${statusStyles[product.status] || statusStyles.Beta}`}>
                       {product.status}
