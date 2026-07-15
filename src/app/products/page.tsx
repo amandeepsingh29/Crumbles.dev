@@ -46,7 +46,7 @@ export default function ProductsPage() {
           {products.map((product, index) => {
             const isLive = product.link !== '#';
             const content = (
-              <div className="group grid gap-6 border-b border-gray-900/15 py-8 transition-colors hover:bg-white/60 dark:border-white/15 dark:hover:bg-white/[0.04] md:grid-cols-[72px_1fr_auto] md:items-center md:px-5">
+              <div className="group grid gap-6 border-b border-gray-900/15 py-8 transition-colors hover:bg-white/60 dark:border-white/15 dark:hover:bg-white/[0.04] md:grid-cols-[72px_minmax(0,1fr)_auto] md:items-center md:px-5">
                 <span className="font-mono text-sm text-gray-400">0{index + 1}</span>
                 <div>
                   <div className="mb-3 flex flex-wrap items-center gap-3">

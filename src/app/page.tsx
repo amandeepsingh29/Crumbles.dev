@@ -84,7 +84,7 @@ export default function Home() {
           </div>
           <div className="border-t border-gray-950/15 dark:border-white/15">
             {projects.map((project) => (
-              <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_1fr_1fr_auto] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
+              <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(0,1fr)_minmax(0,1fr)_auto] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
                 <span className="font-mono text-sm text-gray-400">{project.number}</span>
                 <h3 className="text-2xl font-black tracking-tight text-gray-950 dark:text-white">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
