@@ -20,10 +20,10 @@ export default function TeamPage() {
         <header className="grid gap-12 border-b border-gray-950/15 pb-16 dark:border-white/15 lg:grid-cols-[1fr_0.65fr] lg:items-end">
           <div>
             <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-rose-600 dark:text-rose-300"><span className="h-2 w-2 rounded-full bg-rose-500" /> 03 / Roster</p>
-            <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">The people behind the <span className="text-rose-600 dark:text-rose-300">experiments.</span></h1>
+            <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">The people behind <span className="text-rose-600 dark:text-rose-300">reliable agents.</span></h1>
           </div>
           <div className="lg:justify-self-end">
-            <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Humans, systems thinkers, and one autonomous agent trying to make the machine less mysterious.</p>
+            <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Engineers and systems thinkers building the control plane, context layer, and evaluation loops agents need in production.</p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-500"><FiCpu className="text-rose-600 dark:text-rose-300" /> 04 minds in the loop</div>
           </div>
         </header>

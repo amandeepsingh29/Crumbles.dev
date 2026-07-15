@@ -5,9 +5,9 @@ import { getBlogs } from '@/data/blogs';
 
 export const metadata: Metadata = {
   title: 'Lab Notes | Crumbles',
-  description: 'Research updates, architecture teardowns, and useful failures from the Crumbles lab.',
+  description: 'Technical notes on operating AI agents, evaluating failures, and building reliable context systems.',
   alternates: { canonical: '/blogs' },
-  openGraph: { title: 'Lab Notes | Crumbles', description: 'Research updates, architecture teardowns, and useful failures from the Crumbles lab.', url: '/blogs', images: ['/opengraph-image'] },
+  openGraph: { title: 'Engineering Notes | Crumbles', description: 'Technical notes on operating AI agents, evaluating failures, and building reliable context systems.', url: '/blogs', images: ['/opengraph-image'] },
 };
 
 function formatDate(dateStr: string) {
@@ -30,7 +30,7 @@ export default function BlogsPage() {
             <p className="mb-5 text-xs font-black uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">02 / Field notes</p>
             <h1 className="text-6xl font-black leading-none tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">Lab notes.</h1>
           </div>
-          <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Research updates, architecture teardowns, and useful failures from the edge of the lab.</p>
+          <p className="max-w-sm text-lg leading-relaxed text-gray-600 dark:text-gray-400">Technical notes on operating AI agents, evaluating failures, and building reliable context systems.</p>
         </header>
 
         {featured ? (

@@ -5,12 +5,14 @@ import { products } from '@/data/products';
 
 export const metadata: Metadata = {
   title: 'Products | Crumbles',
-  description: 'Experimental tools, frameworks, and infrastructure from Crumbles.',
+  description: 'AI SRE and knowledge infrastructure for teams running agents in production.',
   alternates: { canonical: '/products' },
-  openGraph: { title: 'Products | Crumbles', description: 'Experimental tools, frameworks, and infrastructure from Crumbles.', url: '/products', images: ['/opengraph-image'] },
+  openGraph: { title: 'Products | Crumbles', description: 'AI SRE and knowledge infrastructure for teams running agents in production.', url: '/products', images: ['/opengraph-image'] },
 };
 
 const statusStyles: Record<string, string> = {
+  'Core system': 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
+  Building: 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
   Beta: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   'Early Access': 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
   'Internal Testing': 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300',
@@ -24,18 +26,18 @@ export default function ProductsPage() {
         <header className="grid gap-10 border-b border-gray-900/15 pb-16 dark:border-white/15 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div>
             <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
-              <span className="h-2 w-2 rounded-full bg-sky-500" /> 01 / Build
+              <span className="h-2 w-2 rounded-full bg-sky-500" /> 01 / Agent infrastructure
             </p>
             <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">
-              Tools for the <span className="text-sky-500">breakage.</span>
+              The stack for <span className="text-sky-500">reliable agents.</span>
             </h1>
           </div>
           <div className="max-w-sm lg:justify-self-end">
             <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-              Small, opinionated systems for people who would rather understand the limits than hide them.
+              Two core systems for teams that need agents to be observable, grounded, and safe to change in production.
             </p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-400">
-              <FiLayers className="text-sky-500" /> 04 experiments in the lab
+              <FiLayers className="text-sky-500" /> 02 core systems / 02 supporting surfaces
             </div>
           </div>
         </header>
@@ -57,7 +59,7 @@ export default function ProductsPage() {
                 </div>
                 <div className="flex items-center gap-2 text-sm font-black text-gray-700 dark:text-gray-300 md:justify-self-end">
                   {isLive ? <FiGithub /> : <span className="text-gray-400">Soon</span>}
-                  <span>{isLive ? 'Open project' : 'In the lab'}</span>
+                  <span>{isLive ? 'Open product' : 'Building'}</span>
                   <FiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
               </div>
@@ -74,8 +76,8 @@ export default function ProductsPage() {
         </div>
 
         <footer className="mt-12 flex flex-col gap-4 text-sm text-gray-500 dark:text-gray-400 md:flex-row md:items-center md:justify-between">
-          <span>Every product starts as a question.</span>
-          <Link href="/careers" className="font-black text-gray-900 hover:text-sky-600 dark:text-white dark:hover:text-sky-300">Work on the next one <FiArrowUpRight className="ml-1 inline" /></Link>
+          <span>Built for teams shipping agents.</span>
+          <Link href="/careers" className="font-black text-gray-900 hover:text-sky-600 dark:text-white dark:hover:text-sky-300">Build the next layer <FiArrowUpRight className="ml-1 inline" /></Link>
         </footer>
       </div>
     </main>

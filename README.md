@@ -1,6 +1,6 @@
 # Crumbles
 
-Crumbles is an independent AI lab website built with Next.js. It presents the lab’s products, research notes, team, and open roles through a lightweight editorial interface.
+Crumbles is a product website for AI agent infrastructure, built with Next.js. It presents the AI SRE control plane, the AI Knowledge Layer, supporting product surfaces, research notes, team, and open roles through a lightweight editorial interface.
 
 ## Stack
 

@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Nunito, Geist_Mono, DynaPuff } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const dynaPuff = DynaPuff({
-  variable: "--font-dynapuff",
   subsets: ["latin"],
 });
 
@@ -25,7 +15,7 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Crumbles",
-  description: "Labs that build (& break) AI.",
+  description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
@@ -34,14 +24,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Crumbles",
     title: "Crumbles",
-    description: "Labs that build (& break) AI.",
+    description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
     url: siteUrl,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crumbles AI Lab" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crumbles AI agent infrastructure" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Crumbles",
-    description: "Labs that build (& break) AI.",
+    description: "Production infrastructure for AI agents: AI SRE and a source-backed knowledge layer.",
     images: ["/opengraph-image"],
   },
 };
@@ -55,7 +45,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${nunito.variable} ${geistMono.variable} ${dynaPuff.variable} antialiased`}
+      className={`${geistMono.variable} antialiased`}
     >
       <head>
         {/* Apply the saved/system theme before paint to avoid a flash of the
