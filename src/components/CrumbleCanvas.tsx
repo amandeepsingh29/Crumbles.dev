@@ -49,6 +49,10 @@ function CelestialTransition({ theme, reducedMotion }: { theme: 'light' | 'dark'
   const materialRef = useRef<THREE.MeshStandardMaterial>(null);
   const progressRef = useRef(0);
 
+  useEffect(() => {
+    progressRef.current = 0;
+  }, [theme]);
+
   useFrame((state, delta) => {
     const group = groupRef.current;
     const mesh = meshRef.current;

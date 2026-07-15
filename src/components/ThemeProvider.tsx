@@ -24,7 +24,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, getServerThemeSnapshot);
 
   const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
+    // Read the DOM synchronously so rapid clicks cannot reuse a stale React snapshot.
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const next = current === 'light' ? 'dark' : 'light';
     localStorage.setItem('theme', next);
     document.documentElement.classList.toggle('dark', next === 'dark');
   };
