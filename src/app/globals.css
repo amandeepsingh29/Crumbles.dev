@@ -86,13 +86,77 @@ body {
 
 .panther-mascot {
   position: fixed;
-  right: 1.25rem;
+  left: 1.25rem;
   bottom: 1.25rem;
   z-index: 40;
   width: clamp(5.5rem, 13vw, 9rem);
   aspect-ratio: 1;
-  pointer-events: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
   filter: drop-shadow(0 14px 20px rgb(15 23 42 / 0.16));
+  transition: transform 180ms ease;
+}
+
+.panther-mascot:hover,
+.panther-mascot:focus-visible {
+  transform: translateY(-0.35rem) scale(1.04);
+}
+
+.panther-mascot:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 0.35rem;
+  border-radius: 999px;
+}
+
+.panther-mascot-wrap {
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+}
+
+.panther-mascot-wrap .panther-mascot {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  z-index: auto;
+}
+
+.panther-mascot-bubble {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.75rem);
+  width: max-content;
+  max-width: 14rem;
+  border: 1px solid rgb(15 23 42 / 0.12);
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: #fff;
+  padding: 0.7rem 0.85rem;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 12px 30px rgb(15 23 42 / 0.12);
+}
+
+.panther-mascot-bubble span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #64748b;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.dark .panther-mascot-bubble {
+  border-color: rgb(255 255 255 / 0.14);
+  background: #111827;
+  color: #fff;
+}
+
+.dark .panther-mascot-bubble span {
+  color: #94a3b8;
 }
 
 h1,
