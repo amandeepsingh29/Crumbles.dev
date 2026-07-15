@@ -89,7 +89,7 @@ body {
   left: 1.25rem;
   bottom: 1.25rem;
   z-index: 40;
-  width: clamp(5.5rem, 13vw, 9rem);
+  width: clamp(4rem, 8vw, 6.5rem);
   aspect-ratio: 1;
   cursor: pointer;
   border: 0;
@@ -115,6 +115,14 @@ body {
   left: 1.25rem;
   bottom: 1.25rem;
   z-index: 40;
+}
+
+.panther-mascot-wrap--cursor {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  will-change: transform;
 }
 
 .panther-mascot-wrap .panther-mascot {

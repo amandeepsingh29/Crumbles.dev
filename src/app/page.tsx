@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
-import PantherMascot from '@/components/PantherMascot';
 
 const projects = [
   { number: '01', slug: 'sena', title: 'Agent Sena', type: 'AI SRE', description: 'Keep production agents reliable with incidents, SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
@@ -137,7 +136,7 @@ export default function Home() {
           <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span></span><span>Built to be inspected.</span></div>
         </div>
       </footer>
-      <PantherMascot />
+      {/* Panther mascot is temporarily disabled; implementation and assets are retained. */}
     </main>
   );
 }
