@@ -89,7 +89,7 @@ export default function Home() {
             {projects.map((project) => (
               <Link key={project.number} href="/products" className="group grid gap-5 border-b border-gray-950/15 py-8 transition-colors hover:bg-white/60 md:grid-cols-[72px_minmax(0,0.8fr)_minmax(0,1.2fr)_160px] md:items-center md:px-5 dark:border-white/15 dark:hover:bg-white/[0.04]">
                 <span className="font-mono text-sm text-gray-400">{project.number}</span>
-                <h3 className="text-xl font-black tracking-tight text-gray-950 dark:text-white md:text-2xl">{project.title}</h3>
+                <h3 className="text-lg font-black tracking-tight text-gray-950 dark:text-white md:text-xl">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
                 <span className={`text-right text-xs font-black uppercase tracking-[0.15em] ${project.color}`}>{project.type}</span>
               </Link>
