@@ -3,7 +3,7 @@ export const openRoles = [
     title: "Founding Engineer — Agent Platform",
     type: "Founding engineer",
     location: "Remote / San Francisco",
-    description: "Own the execution, reliability, and observability systems behind Sena and Tracy from the first production customer onward.",
+    description: "Own the execution, reliability, and observability systems behind Sena and Tracey from the first production customer onward.",
   },
   {
     title: "Founding Engineer — Knowledge Systems",

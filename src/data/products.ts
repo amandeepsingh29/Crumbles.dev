@@ -21,13 +21,13 @@ export const products: Product[] = [
     capabilities: ['Agent SLOs and incident timelines', 'Failure-aware retries and fallbacks', 'Latency, cost, and model drift controls', 'Safe rollout and rollback workflows'],
   },
   {
-    slug: 'tracy',
-    title: 'Observer Tracy',
+    slug: 'tracey',
+    title: 'Observer Tracey',
     category: 'LLM + agent observability',
     description: 'Detailed execution traces for prompts, model calls, tool calls, handoffs, retrieved context, tokens, latency, and outputs.',
     promise: 'See exactly what an agent knew, called, and returned on every run.',
     status: 'Platform',
-    link: '/products/tracy',
+    link: '/products/tracey',
     capabilities: ['Prompt and model-call traces', 'Tool and handoff timelines', 'Token, latency, and cost analysis', 'Run replay for debugging and evaluation'],
   },
   {

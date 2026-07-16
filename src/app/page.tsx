@@ -4,7 +4,7 @@ import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
   { number: '01', slug: 'sena', title: 'Agent Sena', type: 'AI SRE', description: 'Keep production agents reliable with incidents, SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
-  { number: '02', slug: 'tracy', title: 'Observer Tracy', type: 'Observability', description: 'See every prompt, model call, tool call, handoff, and output.', color: 'text-sky-500' },
+  { number: '02', slug: 'tracey', title: 'Observer Tracey', type: 'Observability', description: 'See every prompt, model call, tool call, handoff, and output.', color: 'text-sky-500' },
   { number: '03', slug: 'atlas', title: 'Captain Atlas', type: 'Knowledge layer', description: 'Give agents permission-aware, fresh, source-backed context.', color: 'text-sky-500' },
   { number: '04', slug: 'clara', title: 'Agent Clara', type: 'Customer support', description: 'Resolve customer questions with approved knowledge and safe actions.', color: 'text-sky-500' },
   { number: '05', slug: 'riley', title: 'Operator Riley', type: 'Workflow automation', description: 'Coordinate work across the tools your teams already use.', color: 'text-sky-500' },
@@ -104,7 +104,7 @@ export default function Home() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-300 dark:text-sky-600">Why this exists</p>
             <div className="mt-12 space-y-8">
               <div className="border-l-2 border-sky-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">INPUT</p><p className="mt-2 text-xl font-black">Events, documents, tools, models</p></div>
-              <div className="ml-8 border-l-2 border-violet-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">PLATFORM</p><p className="mt-2 text-xl font-black">Sena + Tracy + Atlas</p></div>
+              <div className="ml-8 border-l-2 border-violet-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">PLATFORM</p><p className="mt-2 text-xl font-black">Sena + Tracey + Atlas</p></div>
               <div className="ml-16 border-l-2 border-emerald-400 pl-5"><p className="font-mono text-xs text-gray-400 dark:text-gray-500">PRODUCTS</p><p className="mt-2 text-xl font-black">Clara + Riley for real work</p></div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link><Link href="/contact" className="block hover:text-white">Contact</Link></div></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Focus</p><div className="mt-5 flex items-center gap-2 text-sm text-gray-300"><FiActivity className="text-emerald-300" /> Agent reliability</div><p className="mt-3 text-sm leading-relaxed text-gray-500">Observe every run. Ground every answer.</p></div>
-            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Products</p><p className="mt-5 text-sm leading-relaxed text-gray-400">Sena, Tracy, Atlas, Clara, and Riley.</p></div>
+            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Products</p><p className="mt-5 text-sm leading-relaxed text-gray-400">Sena, Tracey, Atlas, Clara, and Riley.</p></div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Resources</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/docs" className="block hover:text-white">Docs</Link><Link href="/pricing" className="block hover:text-white">Pricing</Link><Link href="/status" className="block hover:text-white">Status</Link><Link href="/security" className="block hover:text-white">Security</Link><Link href="/privacy" className="block hover:text-white">Privacy</Link><Link href="/terms" className="block hover:text-white">Terms</Link></div></div>
           </div>
           <div className="flex flex-col gap-3 pt-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between"><span>© 2025 <span className="font-brand">Crumbles</span></span><span>Built to be inspected.</span></div>
