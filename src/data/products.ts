@@ -11,24 +11,14 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    slug: 'sena',
-    title: 'Agent Sena',
-    category: 'AI SRE',
-    description: 'The reliability control plane for production agents. Track incidents, SLOs, failures, latency, cost, fallbacks, and safe rollbacks.',
-    promise: 'Keep every production agent observable, recoverable, and safe to change.',
-    status: 'Platform',
-    link: '/products/sena',
-    capabilities: ['Agent SLOs and incident timelines', 'Failure-aware retries and fallbacks', 'Latency, cost, and model drift controls', 'Safe rollout and rollback workflows'],
-  },
-  {
     slug: 'tracey',
     title: 'Observer Tracey',
-    category: 'LLM + agent observability',
-    description: 'Detailed execution traces for prompts, model calls, tool calls, handoffs, retrieved context, tokens, latency, and outputs.',
-    promise: 'See exactly what an agent knew, called, and returned on every run.',
+    category: 'Agent observability + reliability',
+    description: 'The reliability control plane for production agents. Inspect prompts, model calls, tools, handoffs, failures, SLOs, latency, cost, fallbacks, and rollbacks.',
+    promise: 'See exactly what an agent knew, called, and returned—and keep every run safe to change.',
     status: 'Platform',
     link: '/products/tracey',
-    capabilities: ['Prompt and model-call traces', 'Tool and handoff timelines', 'Token, latency, and cost analysis', 'Run replay for debugging and evaluation'],
+    capabilities: ['Prompt and model-call traces', 'Agent SLOs and incident timelines', 'Token, latency, cost, and failure analysis', 'Failure-aware fallbacks and safe rollbacks'],
   },
   {
     slug: 'atlas',
