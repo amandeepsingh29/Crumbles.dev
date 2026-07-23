@@ -13,6 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+  const isTraceySurface = pathname === '/products/tracey' || pathname.startsWith('/tracey/docs');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -20,7 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const links = [
+  const globalLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
     { name: 'Blogs', href: '/blogs' },
@@ -29,7 +30,17 @@ export default function Navbar() {
     { name: 'Contact', href: '/contact' },
   ];
 
-  const isActive = (href: string) => pathname === href;
+  const traceyLinks = [
+    { name: 'Overview', href: '/products/tracey' },
+    { name: 'Docs', href: '/tracey/docs' },
+    { name: 'Getting started', href: '/tracey/docs/getting-started' },
+    { name: 'Integrations', href: '/tracey/docs/integrations/signoz' },
+    { name: 'Crumbles', href: '/products' },
+  ];
+
+  const links = isTraceySurface ? traceyLinks : globalLinks;
+
+  const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(`${href}/`));
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
@@ -39,11 +50,12 @@ export default function Navbar() {
           : 'bg-white/50 dark:bg-gray-900/50 backdrop-blur-md border border-white/40 dark:border-gray-700/40'
       } px-6 py-3`}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setIsOpen(false)}>
-          <Image src="/logo.png" alt="Crumbles Logo" width={36} height={36} style={{ width: 36, height: 36 }} className="rounded-lg object-contain" />
+        <Link href={isTraceySurface ? '/products/tracey' : '/'} className="flex items-center gap-2 shrink-0" onClick={() => setIsOpen(false)}>
+          <Image src="/logo.png" alt={isTraceySurface ? 'Tracey by Crumbles' : 'Crumbles Logo'} width={36} height={36} style={{ width: 36, height: 36 }} className="rounded-lg object-contain" />
           <span className="font-brand text-lg font-black tracking-tight text-gray-900 dark:text-white sm:text-xl">
-            Crumbles
+            {isTraceySurface ? 'Tracey' : 'Crumbles'}
           </span>
+          {isTraceySurface && <span className="hidden text-[9px] font-black uppercase tracking-[0.16em] text-gray-400 sm:inline">by Crumbles</span>}
         </Link>
 
         {/* Desktop Nav */}
