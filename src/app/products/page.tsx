@@ -33,7 +33,7 @@ export default function ProductsPage() {
               Two platform systems and two production agent products for teams building on top of existing software.
             </p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-400">
-              <FiLayers className="text-sky-500" /> 02 platform systems / 02 SaaS products
+              <FiLayers className="text-sky-500" /> 02 platform systems / 02 production agents
             </div>
           </div>
         </header>

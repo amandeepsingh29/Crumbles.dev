@@ -38,8 +38,8 @@ export default function Home() {
 
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-gray-950/15 bg-gray-950/15 dark:border-white/15 dark:bg-white/15 sm:grid-cols-3">
             {[
-              ['05', 'connected products'],
-              ['03', 'platform systems'],
+              ['04', 'connected products'],
+              ['02', 'platform systems'],
               ['02', 'production agents'],
             ].map(([value, label]) => (
               <div key={label} className="bg-[#f4f1e8]/90 p-6 dark:bg-gray-950/90">
