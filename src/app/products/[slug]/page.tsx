@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { FiActivity, FiArrowLeft, FiArrowUpRight, FiCheck, FiShield } from 'react-icons/fi';
 import { products } from '@/data/products';
+import TraceyProductPage from '@/components/TraceyProductPage';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -32,6 +33,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   if (!product) notFound();
 
   const detail = product.detail;
+
+  if (product.slug === 'tracey') return <TraceyProductPage product={product} />;
 
   return (
     <main className="relative z-10 min-h-screen bg-[#f4f1e8] px-6 pb-24 pt-28 text-gray-950 dark:bg-gray-950 dark:text-white md:pt-32">
