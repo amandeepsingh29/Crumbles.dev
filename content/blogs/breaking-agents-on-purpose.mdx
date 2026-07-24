@@ -14,12 +14,122 @@ But the real world is messy. APIs timeout. Prompts are ambiguous. Malicious user
 
 ## The Chaos Arena
 
-We built what we call the **Chaos Arena**. It's an isolated simulation where our agents are subjected to:
+We built what we call the **Chaos Arena**. It is an isolated test environment where an agent can be interrupted, misled, slowed down, or given incomplete context without putting a real customer or production system at risk.
 
-- **Resource Starvation**: Randomly dropping API requests.
-- **Adversarial Injection**: Malicious prompts injected into their context streams.
-- **Memory Corruption**: Erasing short-term vector memory mid-task.
+The important word is *isolated*. Chaos is useful only when the experiment has a known boundary, a recorded input, and a way to restore the starting state. We do not randomly break production and call the result learning.
 
-By systematically breaking our agents, we discovered new architectural patterns. We learned how to implement self-healing loops, how to build robust fallback mechanisms, and most importantly, how to make agents that *know when to ask for help*.
+Our first failure matrix included:
 
-This is just the beginning. The future belongs to systems that can survive the chaos.
+- **Resource starvation:** delay, drop, or rate-limit selected API requests.
+- **Dependency failure:** return timeouts, malformed responses, stale data, and partial outages from tools.
+- **Adversarial injection:** place contradictory or malicious instructions into retrieved context and tool output.
+- **Memory corruption:** remove, reorder, or age short-term memory during a multi-step task.
+- **Model uncertainty:** force a fallback model, truncate a response, or return an answer that requires clarification.
+- **State conflict:** change the underlying record between the agent’s read and its attempted write.
+
+Each experiment records the same basic evidence: the starting state, the injected fault, the agent’s intermediate decisions, the tools it called, the side effects it attempted, and the final outcome. Without that record, a failure is only a story someone tells after the fact.
+
+## Randomness is not the same as rigor
+
+The first version of our chaos tests was too random. A run would fail, but we could not explain whether the agent failed because of the injected timeout, an unrelated model decision, or a bug in the harness.
+
+We changed the test shape to make every experiment reproducible:
+
+1. Give the agent a fixed task and a known initial state.
+2. Inject one primary failure at a specific step.
+3. Capture the complete execution trace.
+4. Evaluate the result against explicit safety criteria.
+5. Replay the same case after a change.
+
+This lets us compare behavior rather than impressions. A new prompt, retry policy, model, or tool wrapper should be judged against the same failure case. If the agent appears more capable but still performs an unsafe side effect, the test has not passed.
+
+## What we measure when an agent breaks
+
+Traditional service tests often stop at a status code. Agent tests need a wider definition of correctness because an agent can return a valid HTTP response and still make a bad decision.
+
+We evaluate five layers:
+
+### 1. Detection
+
+Did the agent notice that the situation was abnormal? A timeout, empty retrieval result, conflicting record, or suspicious instruction should change the agent’s behavior. Silent continuation is itself a failure mode.
+
+### 2. Diagnosis
+
+Did the agent identify what it actually knows? We look for a distinction between an observed tool error, a likely cause, and an unverified hypothesis. The agent should not turn an unavailable dependency into a confident explanation.
+
+### 3. Containment
+
+Did the agent stop the failure from spreading? This can mean cancelling a workflow, limiting retries, avoiding a write, or routing the task to a human. A graceful refusal is often a better outcome than a partially completed action.
+
+### 4. Recovery
+
+Did the agent choose an allowed fallback? The fallback may be another model, a read-only path, a cached source, or a human handoff. Recovery must respect the task’s permissions and should not quietly lower the safety bar.
+
+### 5. Communication
+
+Did the final response accurately describe the outcome? A user should be able to tell whether the request succeeded, partially completed, or needs attention. “Done” is not an acceptable answer when the write was never verified.
+
+## The patterns that changed our architecture
+
+Breaking the system exposed a few design rules that were easy to miss on the happy path.
+
+### Retries need a budget
+
+Retries are not recovery by themselves. They can amplify an outage, duplicate a side effect, and make a slow run look like a healthy one. Every retry needs a bounded count, a timeout, and an idempotency strategy for the action it may repeat.
+
+### Tools need failure-aware contracts
+
+A tool should not return only a string. The agent needs to know whether the result is fresh, complete, authorized, and safe to act on. We started treating tool results as structured evidence with an outcome class, not as unquestionable context.
+
+### Memory needs provenance
+
+When memory changes during a task, the agent needs to know what changed and when. A retrieved fact without a source, timestamp, or permission context is difficult to trust—and impossible to debug after an incident.
+
+### Side effects need a separate decision
+
+The decision to call a tool and the decision to commit a side effect are not the same thing. Our safer flows separate planning from execution, show the proposed action, and require the relevant approval or policy before anything consequential happens.
+
+### Asking for help is a capability
+
+The strongest behavior in several experiments was not a clever recovery. It was a clear handoff: the agent explained what failed, what it had already tried, and what a human needed to decide. We now treat escalation as a successful state when the system cannot safely continue.
+
+## One failure, three possible outcomes
+
+Consider a support agent that needs to update a customer’s shipping address. The account service times out after the agent has retrieved the customer record.
+
+An unsafe agent retries the write until the request succeeds or the workflow times out. It may create duplicate events or tell the customer that the change was completed without verification.
+
+A brittle agent stops with “Something went wrong,” losing the context it already gathered.
+
+A robust agent records the timeout, avoids the write, reports that no change was confirmed, and offers a human handoff with the account ID and the exact missing evidence. That is less magical, but much more useful in production.
+
+## From chaos test to production control
+
+Chaos experiments should not live in a separate engineering universe. Each important case should become a regression test, an alert condition, or a policy decision in the production system.
+
+The loop we use is:
+
+1. **Break** one dependency or assumption in the arena.
+2. **Observe** the complete run, including prompts, tools, handoffs, latency, and outcome.
+3. **Classify** the failure as detection, diagnosis, containment, recovery, or communication.
+4. **Change** one part of the system: prompt, model, tool contract, policy, or workflow.
+5. **Replay** the same case and compare the evidence.
+6. **Promote** the test into a release gate when the behavior matters in production.
+
+This is also why observability for agents has to be more than a token counter. We need to connect the model decision to the tool call, the tool call to the dependency, and the dependency state to the user-visible result.
+
+## The standard we are aiming for
+
+We are not trying to build agents that never fail. That standard is impossible, and it encourages teams to hide uncertainty until it becomes an incident.
+
+We are trying to build agents whose failures are:
+
+- **Detectable** before they become silent corruption.
+- **Explainable** from a trace and its supporting evidence.
+- **Contained** by permissions, budgets, and approval boundaries.
+- **Recoverable** through a tested fallback or rollback path.
+- **Communicated** honestly to the person relying on the system.
+
+The future belongs to systems that can survive the chaos—but survival is not the same as pretending nothing happened. A robust agent knows when to continue, when to retry, when to stop, and when to ask for help.
+
+That is why we break agents on purpose.
