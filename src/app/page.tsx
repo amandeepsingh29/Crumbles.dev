@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { FiActivity, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
-  { number: '01', slug: 'tracey', title: 'Observer Tracey', type: 'Observability + SRE', description: 'See every agent run and keep production systems reliable with SLOs, fallbacks, and rollbacks.', color: 'text-sky-500' },
-  { number: '02', slug: 'atlas', title: 'Captain Atlas', type: 'Knowledge layer', description: 'Give agents permission-aware, fresh, source-backed context.', color: 'text-sky-500' },
-  { number: '03', slug: 'clara', title: 'Agent Clara', type: 'Customer support', description: 'Resolve customer questions with approved knowledge and safe actions.', color: 'text-sky-500' },
-  { number: '04', slug: 'riley', title: 'Operator Riley', type: 'Workflow automation', description: 'Coordinate work across the tools your teams already use.', color: 'text-sky-500' },
+  { number: '01', slug: 'tracey', title: 'Observer Tracey', type: 'Watch and improve', description: 'See what every agent did, find failures, and keep runs reliable.', color: 'text-sky-500' },
+  { number: '02', slug: 'atlas', title: 'Captain Atlas', type: 'Give agents knowledge', description: 'Give agents the right information, with sources and permissions attached.', color: 'text-sky-500' },
+  { number: '03', slug: 'clara', title: 'Agent Clara', type: 'Support customers', description: 'Answer customer questions and take safe actions with human backup.', color: 'text-sky-500' },
+  { number: '04', slug: 'riley', title: 'Operator Riley', type: 'Automate work', description: 'Let agents coordinate work across the tools your team already uses.', color: 'text-sky-500' },
 ];
 
 export default function Home() {
@@ -16,31 +16,31 @@ export default function Home() {
         <div className="pointer-events-none absolute left-1/2 top-40 h-96 w-96 -translate-x-1/2 rounded-full bg-sky-300/20 blur-3xl dark:bg-sky-500/10" />
         <div className="relative mx-auto max-w-7xl">
           <div className="mb-12 flex flex-wrap items-center justify-between gap-4 border-b border-gray-950/15 pb-5 text-[11px] font-black uppercase tracking-[0.25em] text-gray-500 dark:border-white/15 dark:text-gray-400">
-            <span className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-emerald-500" /> AI agent infrastructure</span>
-            <span>Observe / Ground / Improve</span>
+            <span className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Tools for AI agents</span>
+            <span>See / Improve / Scale</span>
           </div>
 
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
-              <p className="mb-6 text-sm font-black uppercase tracking-[0.22em] text-sky-600 dark:text-sky-300"><span className="font-brand normal-case tracking-normal">Crumbles</span> / Core systems</p>
+              <p className="mb-6 text-sm font-black uppercase tracking-[0.22em] text-sky-600 dark:text-sky-300"><span className="font-brand normal-case tracking-normal">Crumbles</span> / AI agent tools</p>
               <h1 className="max-w-5xl text-6xl font-black leading-[0.86] tracking-[-0.07em] md:text-8xl lg:text-[9rem]">
-                Production <span className="text-sky-500">infrastructure</span> for AI agents.
+                Build and scale <span className="text-sky-500">AI agents</span> with confidence.
               </h1>
             </div>
             <div className="max-w-md lg:justify-self-end">
-              <p className="text-xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"><span className="font-brand">Crumbles</span> gives agent teams the control plane and knowledge layer they need to run reliably in production.</p>
+              <p className="text-xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"><span className="font-brand">Crumbles</span> gives teams simple tools to see what their agents are doing, give them the right knowledge, and improve them as they grow.</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Link href="/products" className="inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Explore the stack <FiArrowRight /></Link>
-                <Link href="#architecture" className="inline-flex items-center gap-3 rounded-full border border-gray-950/25 px-6 py-3 text-sm font-black text-gray-950 transition-colors hover:bg-gray-950 hover:text-white dark:border-white/25 dark:text-white dark:hover:bg-white dark:hover:text-gray-950">See the architecture <FiArrowDown /></Link>
+                <Link href="/products" className="inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">See our products <FiArrowRight /></Link>
+                <Link href="#architecture" className="inline-flex items-center gap-3 rounded-full border border-gray-950/25 px-6 py-3 text-sm font-black text-gray-950 transition-colors hover:bg-gray-950 hover:text-white dark:border-white/25 dark:text-white dark:hover:bg-white dark:hover:text-gray-950">How it works <FiArrowDown /></Link>
               </div>
             </div>
           </div>
 
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-gray-950/15 bg-gray-950/15 dark:border-white/15 dark:bg-white/15 sm:grid-cols-3">
             {[
-              ['04', 'connected products'],
-              ['02', 'platform systems'],
-              ['02', 'production agents'],
+              ['04', 'products for agent teams'],
+              ['02', 'tools that power them'],
+              ['02', 'agents for real work'],
             ].map(([value, label]) => (
               <div key={label} className="bg-[#f4f1e8]/90 p-6 dark:bg-gray-950/90">
                 <p className="font-mono text-3xl font-bold text-gray-950 dark:text-white">{value}</p>
@@ -55,14 +55,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.3em] text-emerald-700 dark:text-emerald-300">The agent stack</p>
-              <h2 className="mt-6 max-w-sm text-4xl font-black leading-tight tracking-[-0.04em] text-gray-950 dark:text-white md:text-5xl">Reliable agents need more than a model.</h2>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-emerald-700 dark:text-emerald-300">How it works</p>
+              <h2 className="mt-6 max-w-sm text-4xl font-black leading-tight tracking-[-0.04em] text-gray-950 dark:text-white md:text-5xl">Agents need the right tools to do real work.</h2>
             </div>
             <div className="grid gap-px overflow-hidden rounded-3xl border border-white/15 bg-white/15 md:grid-cols-3">
               {[
-                ['01', 'Observe', 'Trace every model call, tool action, handoff, error, and cost.'],
-                ['02', 'Ground', 'Retrieve current, permissioned evidence with provenance attached.'],
-                ['03', 'Improve', 'Replay failures, evaluate changes, and ship with confidence.'],
+                ['01', 'See what happened', 'Follow every model call, tool action, error, and result.'],
+                ['02', 'Give agents the right information', 'Connect current, approved knowledge with the source attached.'],
+                ['03', 'Make every run better', 'Find failures, test changes, and improve how agents work.'],
               ].map(([number, title, description]) => (
                 <article key={number} className="bg-gray-950 p-7 text-white transition-colors hover:bg-gray-900 md:p-8">
                   <span className="font-mono text-sm text-gray-600">{number}</span>
@@ -79,8 +79,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-4 border-b border-gray-950/15 pb-8 md:flex-row md:items-end md:justify-between dark:border-white/15">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">Core products</p>
-              <h2 className="mt-4 text-5xl font-black tracking-[-0.06em] md:text-7xl">The stack for agent teams.</h2>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-violet-600 dark:text-violet-300">Our products</p>
+              <h2 className="mt-4 text-5xl font-black tracking-[-0.06em] md:text-7xl">Tools to run agents every day.</h2>
             </div>
             <Link href="/products" className="text-sm font-black text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">See all products <FiArrowUpRight className="ml-1 inline" /></Link>
           </div>
@@ -108,9 +108,9 @@ export default function Home() {
             </div>
           </div>
           <div className="max-w-xl">
-            <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">For teams shipping agents</p>
-            <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-[-0.06em] text-gray-950 dark:text-white md:text-7xl">Move from demo reliability to production reliability.</h2>
-            <p className="mt-8 text-xl leading-relaxed text-gray-700 dark:text-gray-300">Know what your agents did, why they did it, which sources they used, and what changed when a run failed.</p>
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">For teams building with AI</p>
+            <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-[-0.06em] text-gray-950 dark:text-white md:text-7xl">Make your agents easier to trust and easier to scale.</h2>
+            <p className="mt-8 text-xl leading-relaxed text-gray-700 dark:text-gray-300">Know what your agents did, why they did it, what information they used, and what to improve next.</p>
             {/* Social/project link disabled until a real public repository is available. */}
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function Home() {
                 <Image src="/logo.png" alt="Crumbles logo" width={40} height={40} className="h-10 w-10 rounded-xl object-contain" />
                 <h2 className="font-brand text-3xl font-black">Crumbles</h2>
               </div>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">Production infrastructure for AI agents.</p>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">Tools to run and scale AI agents.</p>
               {/* Social/contact buttons disabled until real destinations are available. */}
             </div>
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Explore</p><div className="mt-5 space-y-3 text-sm text-gray-300"><Link href="/products" className="block hover:text-white">Products</Link><Link href="/blogs" className="block hover:text-white">Lab notes</Link><Link href="/team" className="block hover:text-white">Team</Link><Link href="/careers" className="block hover:text-white">Careers</Link><Link href="/contact" className="block hover:text-white">Contact</Link></div></div>

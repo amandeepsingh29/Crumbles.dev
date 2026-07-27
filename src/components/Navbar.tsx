@@ -24,9 +24,6 @@ export default function Navbar() {
   const globalLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Blogs', href: '/blogs' },
-    { name: 'Team', href: '/team' },
-    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
 

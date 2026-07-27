@@ -5,14 +5,26 @@ import { products } from '@/data/products';
 
 export const metadata: Metadata = {
   title: 'Products | Crumbles',
-  description: 'AI SRE and knowledge infrastructure for teams running agents in production.',
+  description: 'Tools to see, improve, and scale AI agents in production.',
   alternates: { canonical: '/products' },
-  openGraph: { title: 'Products | Crumbles', description: 'AI SRE and knowledge infrastructure for teams running agents in production.', url: '/products', images: ['/opengraph-image'] },
+  openGraph: { title: 'Products | Crumbles', description: 'Tools to see, improve, and scale AI agents in production.', url: '/products', images: ['/opengraph-image'] },
 };
 
 const statusStyles: Record<string, string> = {
   Platform: 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
   'SaaS product': 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300',
+};
+
+const friendlyCategories: Record<string, string> = {
+  tracey: 'Watch and improve',
+  atlas: 'Give agents knowledge',
+  clara: 'Support customers',
+  riley: 'Automate work',
+};
+
+const friendlyStatuses: Record<string, string> = {
+  Platform: 'Core tool',
+  'SaaS product': 'Agent product',
 };
 
 export default function ProductsPage() {
@@ -22,15 +34,15 @@ export default function ProductsPage() {
         <header className="grid gap-10 border-b border-gray-900/15 pb-16 dark:border-white/15 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div>
             <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sky-500 dark:text-sky-300">
-              <span className="h-2 w-2 rounded-full bg-sky-500" /> 01 / Agent infrastructure
+              <span className="h-2 w-2 rounded-full bg-sky-500" /> 01 / Tools for AI agents
             </p>
             <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-gray-950 dark:text-white md:text-8xl">
-              The stack for <span className="text-sky-500">reliable agents.</span>
+              Build and scale <span className="text-sky-500">AI agents.</span>
             </h1>
           </div>
           <div className="max-w-sm lg:justify-self-end">
             <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-              Two platform systems and two production agent products for teams building on top of existing software.
+              Crumbles helps teams understand what their agents are doing, give them the right information, and put them to work safely.
             </p>
             <div className="mt-8 flex items-center gap-3 text-sm font-bold text-gray-500 dark:text-gray-400">
               <FiLayers className="text-sky-500" /> 02 platform systems / 02 production agents
@@ -46,9 +58,9 @@ export default function ProductsPage() {
                 <div>
                   <div className="mb-3 flex flex-wrap items-center gap-3">
                     <h2 className="text-lg font-black tracking-tight text-gray-950 dark:text-white md:text-xl">{product.title}</h2>
-                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-sky-600 dark:text-sky-300">{product.category}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-sky-600 dark:text-sky-300">{friendlyCategories[product.slug] || product.category}</span>
                     <span className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider ${statusStyles[product.status] || statusStyles.Beta}`}>
-                      {product.status}
+                      {friendlyStatuses[product.status] || product.status}
                     </span>
                   </div>
                   <p className="max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-400">{product.description}</p>
@@ -65,8 +77,8 @@ export default function ProductsPage() {
         </div>
 
         <footer className="mt-12 flex flex-col gap-4 text-sm text-gray-500 dark:text-gray-400 md:flex-row md:items-center md:justify-between">
-          <span>Built for teams shipping agents.</span>
-          <Link href="/careers" className="font-black text-gray-900 hover:text-sky-500 dark:text-white dark:hover:text-sky-300">Build the next layer <FiArrowUpRight className="ml-1 inline" /></Link>
+          <span>Built for teams using AI every day.</span>
+          <Link href="/products/tracey" className="font-black text-gray-900 hover:text-sky-500 dark:text-white dark:hover:text-sky-300">Start with Tracey <FiArrowUpRight className="ml-1 inline" /></Link>
         </footer>
       </div>
     </main>

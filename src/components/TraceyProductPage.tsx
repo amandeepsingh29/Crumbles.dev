@@ -56,7 +56,7 @@ export default function TraceyProductPage({ product }: TraceyProductPageProps) {
         <section className="grid gap-12 border-b border-gray-950/10 pb-14 pt-16 dark:border-white/10 md:gap-16 md:pb-20 md:pt-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <div className="mb-7 flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-sky-600 dark:text-sky-300"><span className="h-2 w-2 rounded-full bg-sky-500" /> AI SRE / observability</div>
-            <h1 className="max-w-4xl text-6xl font-black leading-[0.86] tracking-[-0.07em] text-gray-950 dark:text-white md:text-8xl lg:text-[7.5rem]">Production agents, <span className="text-sky-500">with evidence.</span></h1>
+            <h1 className="max-w-4xl text-6xl font-black leading-[0.94] tracking-[-0.07em] text-gray-950 dark:text-white md:text-8xl lg:text-[7.5rem]">Production agents, <span className="text-sky-500">with evidence.</span></h1>
             <p className="mt-8 max-w-2xl text-xl font-medium leading-relaxed text-gray-600 dark:text-gray-300 md:text-2xl">{detail.body}</p>
             <div className="mt-8 flex flex-wrap items-center gap-5"><a href="mailto:team@crumbles.dev?subject=Request%20access%20to%20Tracey" className="inline-flex items-center gap-3 rounded-full bg-gray-950 px-6 py-3 text-sm font-black text-white transition-transform hover:-translate-y-1 dark:bg-white dark:text-gray-950">Get started <FiArrowUpRight /></a><Link href="/tracey/docs/getting-started" className="inline-flex items-center gap-2 text-sm font-black text-sky-700 dark:text-sky-300">Read the docs <FiArrowUpRight /></Link></div>
           </div>

@@ -20,7 +20,7 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Crumbles",
-  description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
+  description: "Crumbles gives teams tools to see, improve, and scale AI agents in production.",
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Crumbles",
     title: "Crumbles",
-    description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
+    description: "Crumbles gives teams tools to see, improve, and scale AI agents in production.",
     url: siteUrl,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crumbles AI agent infrastructure" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Crumbles",
-    description: "An AI agent operating layer with observability, knowledge, customer support, and workflow products.",
+    description: "Crumbles gives teams tools to see, improve, and scale AI agents in production.",
     images: ["/opengraph-image"],
   },
 };
